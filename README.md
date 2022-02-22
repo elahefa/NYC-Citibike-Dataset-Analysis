@@ -1,5 +1,6 @@
 # Unacast-SQL-Queries_NYC Bike Dataset Exploration
 ## What is the most popular start station?
+Most popular start station is "E 17 St & Broadway" by 291615 number of trips.
 ```
 SELECT
   start_station_name,
@@ -26,6 +27,7 @@ Row|start_station_name|num_trip|
 4  |West St & Chambers St|260911
 5  |Pershing Square North|246181
 ## What is the most popular end station?
+Most popular start station is "E 17 St & Broadway" by 307500 number of trips.
 ```
 SELECT
   end_station_name,
@@ -52,6 +54,7 @@ Row|end_station_name|num_trip|
 4  |West St & Chambers St|266036
 5  |Broadway & E 14 St|243596
 ## What is the gender distribution of Citibike users?
+67% of users are men and ~21% of users are women.
 ```
 SELECT
     COUNT(IF(gender = 'male', 1, NULL)) male_count,
