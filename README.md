@@ -71,6 +71,7 @@ Row|male_count|	male_percent|	female_count|	female_percent|	ratio|unknown_count|
 1  |22349314|67.07674676736431|6878784|20.64521767582653|3.2490210479061417|4090921|12.278035556809161|33319019
 
 ## What is the trip duration distribution of Citibike trips?
+Average bike trip duration is almost 16 minutes.
 ```
 SELECT AVG(tripduration)/60 AS average_trip_duration
 FROM `bigquery-public-data.new_york_citibike.citibike_trips`;
