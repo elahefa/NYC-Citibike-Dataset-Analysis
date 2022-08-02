@@ -1,4 +1,4 @@
-# NYC Bike Dataset Exploration
+# NYC Citibike Dataset Exploration
 ## What is the most popular start station?
 Most popular start station is "E 17 St & Broadway" by 291615 number of trips.
 ```
