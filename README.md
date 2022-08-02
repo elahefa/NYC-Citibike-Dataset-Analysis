@@ -73,7 +73,7 @@ ORDER BY
 ###
 ###
 ###
-### What is the most popular start station?
+### The most popular start station
 Most popular start station is "E 17 St & Broadway" by 291615 number of trips.
 ```
 SELECT
@@ -100,7 +100,7 @@ Row|start_station_name|num_trip|
 3  |W 21 St & 6 Ave|275348
 4  |West St & Chambers St|260911
 5  |Pershing Square North|246181
-### What is the most popular end station?
+### The most popular end station
 Most popular start station is "E 17 St & Broadway" by 307500 number of trips.
 ```
 SELECT
@@ -127,7 +127,7 @@ Row|end_station_name|num_trip|
 3  |Lafayette St & E 8 St|275154
 4  |West St & Chambers St|266036
 5  |Broadway & E 14 St|243596
-### What is the gender distribution of Citibike users?
+### The gender distribution of Citibike users
 67% of users are men and ~21% of users are women.
 ```
 SELECT
@@ -147,7 +147,7 @@ Row|male_count|	male_percent|	female_count|	female_percent|	ratio|unknown_count|
 ---|------------------|--------|---|------------------|--------|---|------------------|----|
 1  |22349314|67.07674676736431|6878784|20.64521767582653|3.2490210479061417|4090921|12.278035556809161|33319019
 
-### What is the trip duration distribution of Citibike trips?
+### The trip duration distribution of Citibike trips
 Average bike trip duration is 16 minutes.
 ```
 SELECT AVG(tripduration)/60 AS average_trip_duration
@@ -157,7 +157,7 @@ RESULT:
 Row|average_trip_duration|
 ---|---------------------|
 1  |16.041516425648158|
-### Were there new bike stations introduced or removed at any point in time? What makes you think it did or didn’t?
+### Were there new bike stations introduced or removed at any point in time?
 There were no new bike stations introduced or removed. Using the query below I changed the months and years of timestamp and checked if it gives me any start_station_id. I assumed that if there is any new bike station, people could use that station therefore there should be a start_station_id from that station.
 ```
 SELECT
