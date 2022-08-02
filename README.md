@@ -7,7 +7,10 @@ This document explores New York Citibike dataset through SQL queries. The datase
 ```
 ## Total number of stations
 ```
-
+SELECT 
+    COUNT(*) AS num_stations
+FROM 
+    `bigquery-public-data.new_york.citibike_stations`
 ```
 ## Total number of bikes
 ```
