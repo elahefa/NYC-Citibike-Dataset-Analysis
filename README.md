@@ -36,39 +36,41 @@ ORDER BY
 ```
 ### Average trip duration
 ```
-SELECT AVG(tripduration)/60 AS average_trip_duration
-FROM `bigquery-public-data.new_york_citibike.citibike_trips`;
+SELECT 
+    AVG(tripduration)/60 AS average_trip_duration
+FROM 
+    `bigquery-public-data.new_york_citibike.citibike_trips`;
 ```
 ### Most popular day of the week to bike
 ```
-   SELECT  
-        EXTRACT (dayofweek FROM starttime) AS day_of_week,
-        COUNT(*) AS number_of_trip
-    FROM 
-        `bigquery-public-data.new_york_citibike.citibike_trips`
-    GROUP BY 
-        day_of_week
-    HAVING
-        day_of_week IS NOT NULL 
-    ORDER BY 
-        day_of_week DESC
+SELECT  
+    EXTRACT (dayofweek FROM starttime) AS day_of_week,
+    COUNT(*) AS number_of_trip
+FROM 
+    `bigquery-public-data.new_york_citibike.citibike_trips`
+GROUP BY 
+    day_of_week
+HAVING
+    day_of_week IS NOT NULL
+ORDER BY 
+    day_of_week DESC
 ```
 ### Average trip length each month
 ```
 SELECT
-  EXTRACT(month
-  FROM
-    starttime) AS month,
-   AVG(tripduration)/60 AS avg_duration_in_minutes #SUM(tripduration)/(60*COUNT(*))
+    EXTRACT(month
 FROM
-  `bigquery-public-data.new_york_citibike.citibike_trips`
+    starttime) AS month,
+    AVG(tripduration)/60 AS avg_duration_in_minutes #SUM(tripduration)/(60*COUNT(*))
+FROM
+    `bigquery-public-data.new_york_citibike.citibike_trips`
 GROUP BY
-  month
+    month
 HAVING 
-  month is NOT NULL
+    month is NOT NULL
 ORDER BY
-  month
- ```
+    month
+```
 ###
 ###
 ###
@@ -77,20 +79,20 @@ ORDER BY
 Most popular start station is "E 17 St & Broadway" by 291615 number of trips.
 ```
 SELECT
-  start_station_name,
-  start_station_latitude,
-  start_station_longitude,
-  COUNT(*) AS num_trips
+    start_station_name,
+    start_station_latitude,
+    start_station_longitude,
+    COUNT(*) AS num_trips
 FROM
-  `bigquery-public-data.new_york.citibike_trips`
+    `bigquery-public-data.new_york.citibike_trips`
 GROUP BY
-  1,
-  2,
-  3
+    1,
+    2,
+    3
 ORDER BY
-  num_trips DESC
+    num_trips DESC
 LIMIT
-  5
+    5
 ```
 RESULT:
 Row|start_station_name|num_trip|
