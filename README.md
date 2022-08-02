@@ -1,6 +1,72 @@
 # NYC Citibike Dataset Exploration
 ## By Elahe
 This document explores New York Citibike dataset through SQL queries. The dataset can be found in BigQuery public datasets -> new_york.citibike_trips.
+## Total number of trips
+```
+
+```
+## Total number of stations
+```
+
+```
+## Total number of bikes
+```
+SELECT
+  COUNT(DISTINCT bikeid) AS num_bikes
+FROM
+  `bigquery-public-data.new_york.citibike_trips`
+```
+## Total number of bikes by year
+```
+SELECT 
+    EXTRACT(YEAR from starttime) as year,  
+    COUNT(DISTINCT(bikeid)) as num_bikes
+FROM 
+    `bigquery-public-data.new_york.citibike_trips`
+GROUP BY 
+    year
+ORDER BY
+    year ASC
+```
+## Average trip duration
+```
+SELECT AVG(tripduration)/60 AS average_trip_duration
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`;
+```
+## Most popular day of the week to bike
+```
+   SELECT  
+        EXTRACT (dayofweek FROM starttime) AS day_of_week,
+        COUNT(*) AS number_of_trip
+    FROM 
+        `bigquery-public-data.new_york_citibike.citibike_trips`
+    GROUP BY 
+        day_of_week
+    HAVING
+        day_of_week IS NOT NULL 
+    ORDER BY 
+        day_of_week DESC
+```
+## Average trip length each month
+```
+SELECT
+  EXTRACT(month
+  FROM
+    starttime) AS month,
+   AVG(tripduration)/60 AS avg_duration_in_minutes #SUM(tripduration)/(60*COUNT(*))
+FROM
+  `bigquery-public-data.new_york_citibike.citibike_trips`
+GROUP BY
+  month
+HAVING 
+  month is NOT NULL
+ORDER BY
+  month
+ ```
+##
+##
+##
+##
 ## What is the most popular start station?
 Most popular start station is "E 17 St & Broadway" by 291615 number of trips.
 ```
