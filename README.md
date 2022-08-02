@@ -3,7 +3,10 @@
 This document explores New York Citibike dataset through SQL queries. The dataset can be found in BigQuery public datasets -> new_york.citibike_trips.
 ## Total number of trips
 ```
-
+SELECT 
+    COUNT(*) 
+FROM 
+    `bigquery-public-data.new_york.citibike_trips`
 ```
 ## Total number of stations
 ```
