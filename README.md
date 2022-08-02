@@ -1,6 +1,6 @@
 ## NYC Citibike Dataset Exploration
 ### By Elahe
-This document explores New York Citibike dataset through SQL queries. The dataset can be found in BigQuery public datasets -> new_york.citibike_trips.
+This document explores New York Citibike dataset through SQL queries. The dataset can be found in BigQuery public datasets -> new_york_citibike.
 ### Total number of trips
 ```
 SELECT 
