@@ -1,4 +1,5 @@
 # NYC Citibike Dataset Exploration
+This document explores New York Citibike dataset through SQL queries. The dataset can be found in BigQuery public datasets -> new_york.citibike_trips.
 ## What is the most popular start station?
 Most popular start station is "E 17 St & Broadway" by 291615 number of trips.
 ```
